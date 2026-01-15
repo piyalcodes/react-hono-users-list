@@ -1,7 +1,9 @@
+
+
 # Download the latest nodejs 
 
 
-# Open vs code & go to Extension, and download following
+1. Open vs code & go to Extension, and download following
 
 	- prettier formatter from prettier.io
 	- Eslint from Microsoft.com 
@@ -13,7 +15,7 @@
    		Cmf + Shift + P  and type theme and you will get the theme option, 
    		if you wish you can go with Dark Modern which the VS code default one
 
-#  Go to setting
+2.  Go to setting
     - type Auto save
         > Files: Auto Save
             Change the dropdown to onFocusChange
@@ -22,7 +24,7 @@
           Select Prettier code formatter
       > Format: Format on save
           Check the format on save checkbox
-# Settings icon at the bottom -> snippet
+3. Settings icon at the bottom -> snippet
        And click new snippet from the top drop down
        And type a new and and then enter
        One the page open in vs code
@@ -101,10 +103,10 @@
   Click settings icon at the bottom and click Sinipped, and in the dropdown select your snipped name 
 
 
-# Create a vite-env.d.ts file under src and put content as 
+4. Create a vite-env.d.ts file under src and put content as 
     /// <reference types="vite/client" />
 
-# Update path reference. 
+5. Update path reference. 
 
  tsconfig.app.json
  Add 
@@ -122,9 +124,9 @@ vite.config.ts
   },
  
 
-# Create a git branch, and checkout on your local.
+6. Create a git branch, and checkout on your local.
 
-# Create the  ignore file and make the first commit with follwing content
+7. Create the  ignore file and make the first commit with follwing content
 
  
 /node_modules
