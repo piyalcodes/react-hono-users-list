@@ -1,10 +1,5 @@
 # Download the latest nodejs
-```sh
-sudo nano /etc/hosts
-127.0.0.1       api.local.architected.it # can't use .dev on local, or browsers will force SSL
-127.0.0.1       agent.local.architected.it # can't use .dev on local, or browsers will force SSL
-127.0.0.1       app.local.architected.it # can't use .dev on local, or browsers will force SSL
-```
+ 
 
 
 # Open vs code & go to Extension, and download following
