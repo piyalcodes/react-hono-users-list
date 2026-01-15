@@ -1,5 +1,4 @@
-# Download the latest nodejs
- 
+# Download the latest nodejs 
 
 
 # Open vs code & go to Extension, and download following
@@ -14,7 +13,7 @@
    		Cmf + Shift + P  and type theme and you will get the theme option, 
    		if you wish you can go with Dark Modern which the VS code default one
 
-#  go to setting
+#  Go to setting
     - type Auto save
         > Files: Auto Save
             Change the dropdown to onFocusChange
@@ -30,7 +29,7 @@
 
        And use this sample snippet and past it there
 
-  ``` "Print to console": {
+   "Print to console": {
     "scope": "javascript, typescript,javascriptreact",
     "prefix": "cl",
     "body": ["console.log();"],
@@ -95,7 +94,7 @@
       ""
     ],
     "description": "React styled component"
-  } ```
+  } 
 
 
   To edit snipped
@@ -109,24 +108,24 @@
 
  tsconfig.app.json
  Add 
-```"baseUrl": ".",
+"baseUrl": ".",
     "paths": {
       "@/": ["src/"]
-    }```
+    }
 
 vite.config.ts
  Add
- ``` resolve: {
+  resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
     },
-  },```
+  },
  
 
 # Create a git branch, and checkout on your local.
 
 # Create the  ignore file and make the first commit with follwing content
-```
+
  
 /node_modules
 
@@ -168,6 +167,6 @@ Thumbs.db
 *.tsbuildinfo
 
  
-.pnpm-store ```
+.pnpm-store 
 
  
