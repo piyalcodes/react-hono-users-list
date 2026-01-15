@@ -125,7 +125,7 @@ vite.config.ts
 
 # Create a git branch, and checkout on your local.
 
-# Create the air ignore file and make the first commit 
+# Create the  ignore file and make the first commit with follwing content
 ```
  
 /node_modules
@@ -170,7 +170,4 @@ Thumbs.db
  
 .pnpm-store ```
 
-
-
-
-# react-hono-users-list
+ 
