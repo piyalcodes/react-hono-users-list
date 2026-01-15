@@ -1,6 +1,6 @@
 
 
-# Download the latest nodejs 
+# Download the latest nodejs, and lets configure the settings
 
 
 1. Open vs code & go to Extension, and download following
@@ -126,7 +126,7 @@ vite.config.ts
 
 6. Create a git branch, and checkout on your local.
 
-7. Create the  ignore file and make the first commit with follwing content
+7. Create the ignore file and make the first commit with follwing content
 
  
 /node_modules
