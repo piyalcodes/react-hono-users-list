@@ -1,174 +1,75 @@
+# React + TypeScript + Vite
 
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-# Download the latest nodejs, and lets configure the settings
+Currently, two official plugins are available:
 
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-1. Open vs code & go to Extension, and download following
+## React Compiler
 
-	- prettier formatter from prettier.io
-	- Eslint from Microsoft.com 
-	- Material icon theme
-	- All Autocomplete 
-	- Auto rename Tag
-	- Color highlight
-	- Monokai theme or any theme you prefer
-   		Cmf + Shift + P  and type theme and you will get the theme option, 
-   		if you wish you can go with Dark Modern which the VS code default one
+The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
 
-2.  Go to setting
-    - type Auto save
-        > Files: Auto Save
-            Change the dropdown to onFocusChange
-    - Type Format
-       > Editor: Default formatter
-          Select Prettier code formatter
-      > Format: Format on save
-          Check the format on save checkbox
-3. Settings icon at the bottom -> snippet
-       And click new snippet from the top drop down
-       And type a new and and then enter
-       One the page open in vs code
+Note: This will impact Vite dev & build performances.
 
-       And use this sample snippet and past it there
+## Expanding the ESLint configuration
 
-   "Print to console": {
-    "scope": "javascript, typescript,javascriptreact",
-    "prefix": "cl",
-    "body": ["console.log();"],
-    "description": "Log output to console"
-  }, 
+If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
 
-"Print const": {
-    "scope": "javascript,typescript,javascriptreact",
-    "prefix": "c",
-    "body": ["const ${1} ="],
-    "description": "print const"
-  },
+```js
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
 
-"importCSSModule": {
-    "prefix": "csm",
-    "scope": "javascript,typescript,javascriptreact",
-    "body": ["import styles from './${TM_FILENAME_BASE}.module.css'"],
-    "description": "Import CSS Module as styles"
-  },
+      // Remove tseslint.configs.recommended and replace with this
+      tseslint.configs.recommendedTypeChecked,
+      // Alternatively, use this for stricter rules
+      tseslint.configs.strictTypeChecked,
+      // Optionally, add this for stylistic rules
+      tseslint.configs.stylisticTypeChecked,
 
-"Print function": {
-    "scope": "javascript,typescript,javascriptreact",
-    "prefix": "f",
-    "body": ["function ${1}(){}"],
-    "description": "Print function"
-  },
-
-  "reactComponent": {
-    "prefix": "rfc",
-    "scope": "javascript,typescript,javascriptreact",
-    "body": [
-      "function ${1:${TM_FILENAME_BASE}}() {",
-      "\treturn (",
-      "\t\t<div>",
-      "\t\t\t$0",
-      "\t\t</div>",
-      "\t)",
-      "}",
-      "",
-      "export default ${1:${TM_FILENAME_BASE}}",
-      ""
+      // Other configs...
     ],
-    "description": "React component"
-  },
-  "reactStyledComponent": {
-    "prefix": "rsc",
-    "scope": "javascript,typescript,javascriptreact",
-    "body": [
-      "import styled from 'styled-components'",
-      "",
-      "const Styled${TM_FILENAME_BASE} = styled.$0``",
-      "",
-      "function ${TM_FILENAME_BASE}() {",
-      "\treturn (",
-      "\t\t<Styled${TM_FILENAME_BASE}>",
-      "\t\t\t${TM_FILENAME_BASE}",
-      "\t\t</Styled${TM_FILENAME_BASE}>",
-      "\t)",
-      "}",
-      "",
-      "export default ${TM_FILENAME_BASE}",
-      ""
-    ],
-    "description": "React styled component"
-  } 
-
-
-  To edit snipped
-  Click settings icon at the bottom and click Sinipped, and in the dropdown select your snipped name 
-
-
-4. Create a vite-env.d.ts file under src and put content as 
-    /// <reference types="vite/client" />
-
-5. Update path reference. 
-
- tsconfig.app.json
- Add 
-"baseUrl": ".",
-    "paths": {
-      "@/": ["src/"]
-    }
-
-vite.config.ts
- Add
-  resolve: {
-    alias: {
-      "@": path.resolve(__dirname, "./src"),
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
     },
   },
- 
+])
+```
 
-6. Create a git branch, and checkout on your local.
+You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
-7. Create the ignore file and make the first commit with follwing content
+```js
+// eslint.config.js
+import reactX from 'eslint-plugin-react-x'
+import reactDom from 'eslint-plugin-react-dom'
 
- 
-/node_modules
-
- 
-/dist
-/build 
-
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-*.log
-
- 
-.env
-.env.local
-.env.development.local
-.env.test.local
-.env.production
-
- 
-.DS_Store
-Thumbs.db
-
- 
-.vscode/
-.idea/
-*.swp
-*.swo
-
- 
-/coverage
-
- 
-*.tmp
-*.temp
-
- 
-*.tsbuildinfo
-
- 
-.pnpm-store 
-
- 
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
+      // Enable lint rules for React
+      reactX.configs['recommended-typescript'],
+      // Enable lint rules for React DOM
+      reactDom.configs.recommended,
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
+```
