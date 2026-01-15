@@ -28,7 +28,7 @@
 
        And use this sample snippet and past it there
 
-  `"Print to console": {
+  ``` "Print to console": {
     "scope": "javascript, typescript,javascriptreact",
     "prefix": "cl",
     "body": ["console.log();"],
@@ -93,7 +93,7 @@
       ""
     ],
     "description": "React styled component"
-  }`
+  } ```
 
 
   To edit snipped
@@ -107,24 +107,24 @@
 
  tsconfig.app.json
  Add 
-"baseUrl": ".",
+```"baseUrl": ".",
     "paths": {
       "@/": ["src/"]
-    }
+    }```
 
 vite.config.ts
  Add
-  resolve: {
+ ``` resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
     },
-  },
+  },```
  
 
 # Create a git branch, and checkout on your local.
 
 # Create the air ignore file and make the first commit 
-`
+```
     		# Node modules
 /node_modules
 
@@ -167,7 +167,7 @@ Thumbs.db
 *.tsbuildinfo
 
 # Package manager files
-.pnpm-store `
+.pnpm-store ```
 
 
 
