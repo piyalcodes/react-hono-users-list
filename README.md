@@ -127,48 +127,47 @@ vite.config.ts
 
 # Create the air ignore file and make the first commit 
 ```
-    		# Node modules
+ 
 /node_modules
 
-# Build output
+ 
 /dist
-/build
+/build 
 
-# Logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 *.log
 
-# Environment variables
+ 
 .env
 .env.local
 .env.development.local
 .env.test.local
 .env.production
 
-# OS-specific files
+ 
 .DS_Store
 Thumbs.db
 
-# IDEs and editors
+ 
 .vscode/
 .idea/
 *.swp
 *.swo
 
-# Coverage reports
+ 
 /coverage
 
-# Temporary files
+ 
 *.tmp
 *.temp
 
-# TypeScript
+ 
 *.tsbuildinfo
 
-# Package manager files
+ 
 .pnpm-store ```
 
 
