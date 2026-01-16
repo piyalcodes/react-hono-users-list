@@ -183,3 +183,10 @@ This uses
 - LocalStorage
 
 ![Front-End Component Diagram](./public/architecture/facade-adapter.jpg)
+
+npm install @tanstack/react-query
+npm install -D @tanstack/react-query-devtools
+npm install @tanstack/store
+npm install @tanstack/react-store
+npm install axios
+npm install tailwindcss @tailwindcss/vite

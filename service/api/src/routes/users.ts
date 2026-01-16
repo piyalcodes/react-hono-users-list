@@ -3,7 +3,7 @@ import { users } from "../data/users";
 
 const usersRoute = new Hono();
 
-usersRoute.get("/users", (c) => {
+usersRoute.get("/", (c) => {
   return c.json(users);
 });
 
