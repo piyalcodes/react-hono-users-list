@@ -139,7 +139,7 @@ Click settings icon at the bottom and click Sinipped, and in the dropdown select
 
 tsconfig.app.json
 Add
-`"baseUrl": ".","paths": { "@/": ["src/"]}`
+`"baseUrl": ".","paths": { "@/*": ["src/*"]}`
 
 vite.config.ts
 Add
